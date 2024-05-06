@@ -3,7 +3,7 @@ const floraModel = require("../models/floramodel");
 // get items
 const getFLoraController = async (req, res, next) => {
     try {
-      const flora = await floraModel.find();
+      const flora = await floraModel.findone().sort({ createdAt: -1 });
       res.status(200).json(flora);
     } catch (error) {
       console.error(error);
