@@ -3,7 +3,7 @@ const lysdModel = require("../models/lysdmodel");
 // get items
 const getLysdController = async (req, res, next) => {
     try {
-      const lysd = await lysdModel.findone().sort({ createdAt: -1 });
+      const lysd = await lysdModel.findOne().sort({ createdAt: -1 });
       res.status(200).json(lysd);
     } catch (error) {
       console.error(error);
